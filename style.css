@@ -3,7 +3,8 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    color: black;
+    background-color: hotpink;
+    text-align: center;
 }
 
 .text-box {
@@ -12,4 +13,5 @@ body {
     width: 500px;
     height: 300px;
     margin: auto;
+    text-align: center;
 }
