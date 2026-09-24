@@ -18,10 +18,11 @@ h1 {
 .text-box {
     border: 2px solid pink;
     padding: 20px;
-    width: 500px;
-    height: 300px;
+    width: 400px;
+    height: 200px;
     margin: auto;
     text-align: center;
+    background-color: pink;
 }
 
 .text-box p {
