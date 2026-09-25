@@ -1,6 +1,8 @@
 const yesButton = document.getElementById("yesButton");
 const noButton = document.getElementById("noButton");
 const yesWrapper = document.getElementById("yesWrapper");
+const questionPage = document.getElementById("questionPage");
+const datePage = document.getElementById("datePage");
 
 
 let noClickCount = 0;
@@ -91,7 +93,10 @@ noButton.addEventListener("mouseenter", function () {
 
 });
 
-
+yesButton.addEventListener("click", function () {
+    questionPage.classList.add("hidden");
+    datePage.classList.remove("hidden");
+});
 
 function moveNoButton() {
 

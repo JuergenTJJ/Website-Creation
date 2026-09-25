@@ -6,19 +6,29 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Test</h1>
+        <div id="questionPage">
+             <h1>Test</h1>
 
-        <div class="text-box">
-            <h2>Welcome</h2>
-            <p>Please select a date for our date</p>
+            <div class="text-box">
+                <h2>Welcome</h2>
+                <p>Do you wanna go on a date wif me?</p>
 
-            <div class="button-container">
-                <div id="yesWrapper">
-                    <button id="yesButton">Yes</button>
+                <div class="button-container">
+                    <div id="yesWrapper">
+                        <button id="yesButton">Yes</button>
+                    </div>
+                    <button id="noButton">No</button>
                 </div>
-                <button id="noButton">No</button>
             </div>
         </div>
+
+        <div id="datePage" class="hidden">
+            <div class="text-box">
+                <h2>Welcome</h2>
+                <p>Please select a date for our date</p>
+                <input type="date">
+        </div>
+       
         <script src="script.js"></script>
     </body>
 </html>
