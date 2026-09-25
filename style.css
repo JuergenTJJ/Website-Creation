@@ -1,7 +1,5 @@
 body {
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
+    display: flex;
     min-height: 100vh;
 
     background-color: #FDFBF7;
