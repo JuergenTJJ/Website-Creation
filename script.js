@@ -3,6 +3,7 @@ const noButton = document.getElementById("noButton");
 const yesWrapper = document.getElementById("yesWrapper");
 const questionPage = document.getElementById("questionPage");
 const datePage = document.getElementById("datePage");
+const confirmButton = document.getElementById("confirmationButton");
 
 
 let noClickCount = 0;
@@ -97,6 +98,11 @@ yesButton.addEventListener("click", function () {
     questionPage.classList.add("hidden");
     datePage.classList.remove("hidden");
 });
+
+confirmButton.addEventListener("click", function () {
+    datePage.classList.add("hidden");
+    confirmPage.classList.remove("hidden");
+})
 
 function moveNoButton() {
 
