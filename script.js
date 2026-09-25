@@ -11,14 +11,13 @@ noButton.addEventListener("click", function () {
 
     yesButton.style.transform = `scale(${yesScale})`;
 
-
-    // Remove previous shake
-    yesWrapper.classList.remove("shake");
-
-    // Restart the animation
-    void yesWrapper.offsetWidth;
-
-    // Add shake again
+    // Shake Yes
     yesWrapper.classList.add("shake");
+});
 
+
+// When shaking finishes, remove the class.
+// This allows the next click to trigger it again.
+yesWrapper.addEventListener("animationend", function () {
+    yesWrapper.classList.remove("shake");
 });

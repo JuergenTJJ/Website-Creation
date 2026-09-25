@@ -37,20 +37,30 @@ h1 {
     gap: 20px;
 }
 
-button {
+button:active {
+    border: none;
+    border-radius: 25px;
     font-size: 20px;
     font-weight: bold;
     padding: 10px 25px;
     margin: 10px;
     cursor: pointer;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-#yesButton {
-    background-color: lightgreen;
+#yesButton:hover {
+    background-color: #ff8fab;
+    color: white;
+
+    transition: transform 0.3s ease;
 }
 
-#noButton {
-    background-color: lightcoral;
+#noButton:hover {
+    background-color: #ffd6e0;
+    color: #7a4050;
+
+    transition: transform 0.3s ease;
 }
 
 #yesWrapper.shake {
