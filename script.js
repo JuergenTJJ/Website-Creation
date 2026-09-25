@@ -4,20 +4,41 @@ const yesWrapper = document.getElementById("yesWrapper");
 
 let yesScale = 1;
 
+const originalFontSize = 18;
+const originalVerticalPadding = 12;
+const originalHorizontalPadding = 30;
+
+
 noButton.addEventListener("click", function () {
 
-    // Increase Yes button size
-    yesScale = yesScale + 0.5;
+    if (yesScale < 8) {
 
-    yesButton.style.transform = `scale(${yesScale})`;
+        yesScale += 0.5;
 
-    // Shake Yes
-    yesWrapper.classList.add("shake");
+        if (yesScale > 8) {
+            yesScale = 8;
+        }
+
+
+        // Increase actual dimensions of Yes
+        yesButton.style.fontSize =
+            (originalFontSize * yesScale) + "px";
+
+        yesButton.style.padding =
+            (originalVerticalPadding * yesScale) + "px " +
+            (originalHorizontalPadding * yesScale) + "px";
+
+
+        // Shake Yes
+        yesWrapper.classList.add("shake");
+
+    }
+
 });
 
 
-// When shaking finishes, remove the class.
-// This allows the next click to trigger it again.
 yesWrapper.addEventListener("animationend", function () {
+
     yesWrapper.classList.remove("shake");
+
 });
