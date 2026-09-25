@@ -38,6 +38,17 @@ h1 {
     gap: 20px;
 }
 
+button {
+    border: none;
+    border-radius: 40px;
+
+    padding: 12px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px, 8px, rgba(0, 0, 0, 0.15);
+}
+
 button:active {
     border: none;
     border-radius: 40px;

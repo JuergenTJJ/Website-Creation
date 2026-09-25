@@ -3,6 +3,7 @@ const noButton = document.getElementById("noButton");
 const yesWrapper = document.getElementById("yesWrapper");
 
 let noClickCount = 0;
+let noScale = 1;
 
 const growthLevels = [
     1,
@@ -25,7 +26,8 @@ noButton.addEventListener("click", function () {
 
     noClickCount++;
 
-    // Grow Yes for the first 8 No clicks
+    // FIRST PHASE:
+    // Yes grows and No slowly shrinks
     if (noClickCount <= 8) {
 
         const yesScale = growthLevels[noClickCount];
@@ -36,6 +38,13 @@ noButton.addEventListener("click", function () {
         yesButton.style.padding =
             (originalVerticalPadding * yesScale) + "px " +
             (originalHorizontalPadding * yesScale) + "px";
+
+
+        // Slowly shrink No
+        noScale -= 0.07;
+
+        noButton.style.transform =
+            `scale(${noScale})`;
     }
 
 
