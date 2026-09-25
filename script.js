@@ -4,6 +4,7 @@ const yesWrapper = document.getElementById("yesWrapper");
 const questionPage = document.getElementById("questionPage");
 const datePage = document.getElementById("datePage");
 const confirmButton = document.getElementById("confirmationButton");
+const confirmPage = document.getElementById("confirmPage");
 
 
 let noClickCount = 0;
