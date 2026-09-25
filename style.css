@@ -178,3 +178,10 @@ button:active {
     cursor: pointer;
     opacity: 0.7;
 }
+
+#confirmPage > h2 {
+    text-align: center;
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20px;
+}
