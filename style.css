@@ -46,7 +46,7 @@ button {
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px, 8px, rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 button:active {
@@ -100,4 +100,57 @@ button:active {
 
 .hidden {
     display: none;
+}
+
+.date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#datePicker {
+    padding: 10px 15px;
+
+    font-size: 16px;
+
+    border: 2px solid #ff8fab;
+    border-radius: 15px;
+
+    background-color: white;
+    color: #7a4050;
+
+    cursor: pointer;
+}
+
+#confirmationButton {
+    background-color: #ff8fab;
+    color: white;
+
+    padding: 12px 28px;
+
+    border: none;
+    border-radius: 30px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    box-shadow: 0 4px 10px rgba(255, 143, 171, 0.4);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#confirmationButton:hover {
+    background-color: #ff7096;
+
+    transform: scale(1.08);
+
+    box-shadow: 0 6px 14px rgba(255, 112, 150, 0.45);
+}
+
+#confirmationButton:active {
+    transform: scale(0.95);
 }
