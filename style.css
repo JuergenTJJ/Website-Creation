@@ -66,5 +66,5 @@ button {
 }
 
 .shake {
-    animation: shake 0.3s;
+    animation: shake 1s;
 }
