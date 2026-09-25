@@ -2,7 +2,19 @@ const yesButton = document.getElementById("yesButton");
 const noButton = document.getElementById("noButton");
 const yesWrapper = document.getElementById("yesWrapper");
 
-let yesScale = 1;
+let noClickCount = 0;
+
+const growthLevels = [
+    1,
+    1.3,
+    1.6,
+    2.0,
+    2.5,
+    3.1,
+    3.8,
+    4.6,
+    5.5
+];
 
 const originalFontSize = 18;
 const originalVerticalPadding = 12;
@@ -11,28 +23,24 @@ const originalHorizontalPadding = 30;
 
 noButton.addEventListener("click", function () {
 
-    if (yesScale < 8) {
+    noClickCount++;
 
-        yesScale += 0.5;
+    // Grow Yes for the first 8 No clicks
+    if (noClickCount <= 8) {
 
-        if (yesScale > 8) {
-            yesScale = 8;
-        }
+        const yesScale = growthLevels[noClickCount];
 
-
-        // Increase actual dimensions of Yes
         yesButton.style.fontSize =
             (originalFontSize * yesScale) + "px";
 
         yesButton.style.padding =
             (originalVerticalPadding * yesScale) + "px " +
             (originalHorizontalPadding * yesScale) + "px";
-
-
-        // Shake Yes
-        yesWrapper.classList.add("shake");
-
     }
+
+
+    // Shake Yes every time No is clicked
+    yesWrapper.classList.add("shake");
 
 });
 
