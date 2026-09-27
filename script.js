@@ -166,16 +166,19 @@ Promise.all([
     daisyImage.decode()
 ]).then(() => {
     const canvas = document.createElement("canvas");
-    canvas.width = 260;
-    canvas.height = 260;
+    canvas.width = 360;
+    canvas.height = 360;
 
     const ctx = canvas.getContext("2d");
 
-    // Opposite corners create a diagonal, spaced-out pattern.
-    ctx.drawImage(faceImage, 15, 15, 80, 80);
-    ctx.drawImage(daisyImage, 150, 145, 85, 110);
+    // First row: face, daisy
+    ctx.drawImage(faceImage, 30, 25, 90, 90);
+    ctx.drawImage(daisyImage, 220, 20, 80, 110);
 
-    document.body.appendChild(canvas);
+    // Second row: daisy, face
+    ctx.drawImage(daisyImage, 40, 205, 80, 110);
+    ctx.drawImage(faceImage, 215, 210, 90, 90);
+
     document.body.style.backgroundImage = `url("${canvas.toDataURL("image/png")}")`;
     document.body.style.backgroundRepeat = "repeat";
 }).catch(() => {
