@@ -157,10 +157,12 @@ button:active {
 
 #datePage > h2 {
     text-align: center;
-    font-size: 35px;
+    font-size: 50px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
     padding-top: 40px;
+    color: #333;
+    -webkit-text-stroke: 1.5px white;
 }
 
 #datePicker:hover {
