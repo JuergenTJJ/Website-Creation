@@ -10,7 +10,7 @@ h1 {
     text-align: center;
     font-size: 50px;
     font-weight: bold;
-    padding-top: 20px;
+    padding-top: 40px;
     margin-bottom: 5px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -161,6 +161,7 @@ button:active {
     font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 20px;
+    padding-top: 20px;
 }
 
 #datePicker:hover {
@@ -184,7 +185,7 @@ button:active {
     text-align: center;
     font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 #confirmPage > h3 {
