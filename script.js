@@ -173,7 +173,7 @@ Promise.all([
 
     // Opposite corners create a diagonal, spaced-out pattern.
     ctx.drawImage(faceImage, 15, 15, 80, 80);
-    ctx.drawImage(daisyImage, 150, 145, 70, 95);
+    ctx.drawImage(daisyImage, 150, 145, 85, 110);
 
     document.body.style.backgroundImage = `url("${canvas.toDataURL("image/png")}")`;
     document.body.style.backgroundRepeat = "repeat";
