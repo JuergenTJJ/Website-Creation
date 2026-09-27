@@ -7,6 +7,8 @@ const confirmButton = document.getElementById("confirmationButton");
 const confirmPage = document.getElementById("confirmPage");
 const datePicker = document.getElementById("datePicker");
 const dateError = document.getElementById("dateError");
+const introPage = document.getElementById("introPage");
+const continueButton = document.getElementById("continueButton");
 
 let noClickCount = 0;
 let noScale = 1;
@@ -183,4 +185,10 @@ Promise.all([
     document.body.style.backgroundRepeat = "repeat";
 }).catch(() => {
     console.error("Could not load face.png or daisy.png. Check the filenames and paths.");
+});
+
+continueButton.addEventListener("click", function () {
+    introPage.classList.add("hidden");
+    questionPage.classList.remove("hidden");
+    document.body.classList.remove("intro-active");
 });

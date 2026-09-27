@@ -1,13 +1,22 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <title>Welcome E</title>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <div id="questionPage">
-             <h1>Special Invitation</h1>
+
+    <body class="intro-active">
+        <div id="introPage">
+            <div class="letter-card">
+                <div class="envelope" aria-hidden="true"></div>
+                <h1>A letter from Mr. Tan 💌</h1>
+                <p>Ready to open it?</p>
+                <button id="continueButton">Continue</button>
+            </div>
+        </div>
+
+        <div id="questionPage" class="hidden">
+            <h1>Special Invitation</h1>
 
             <div class="text-box">
                 <h2>Welcome Ms. Ella</h2>
@@ -25,20 +34,25 @@
 
         <div id="datePage" class="hidden">
             <h2>傻傻</h2>
+
             <div class="text-box">
                 <p>Please select a date for our date</p>
+
                 <div class="date-container">
                     <input type="date" id="datePicker">
-                    <p id="dateError" class="hidden">Please select a correct date u dummy ❤️</p>
+                    <p id="dateError" class="hidden">
+                        Please select a correct date u dummy ❤️
+                    </p>
                     <button id="confirmationButton">Confirm</button>
                 </div>
             </div>
         </div>
-       
+
         <div id="confirmPage" class="hidden">
             <h2>Booking Confirm!!!</h2>
             <h3>I can't wait to see you ❤️</h3>
         </div>
+
         <script src="script.js"></script>
     </body>
 </html>
