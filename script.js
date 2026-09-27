@@ -175,6 +175,7 @@ Promise.all([
     ctx.drawImage(faceImage, 15, 15, 80, 80);
     ctx.drawImage(daisyImage, 150, 145, 85, 110);
 
+    document.body.appendChild(canvas);
     document.body.style.backgroundImage = `url("${canvas.toDataURL("image/png")}")`;
     document.body.style.backgroundRepeat = "repeat";
 }).catch(() => {
