@@ -166,8 +166,8 @@ Promise.all([
     daisyImage.decode()
 ]).then(() => {
     const canvas = document.createElement("canvas");
-    canvas.width = 420;
-    canvas.height = 420;
+    canvas.width = 260;
+    canvas.height = 260;
 
     const ctx = canvas.getContext("2d");
 
