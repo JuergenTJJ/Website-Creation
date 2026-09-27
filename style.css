@@ -11,6 +11,7 @@ h1 {
     margin-bottom: 5px;
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    -webkit-text-stroke: 1.5px #333;
 }
 
 .text-box {
