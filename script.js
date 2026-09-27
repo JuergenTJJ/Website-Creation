@@ -5,7 +5,8 @@ const questionPage = document.getElementById("questionPage");
 const datePage = document.getElementById("datePage");
 const confirmButton = document.getElementById("confirmationButton");
 const confirmPage = document.getElementById("confirmPage");
-
+const datePicker = document.getElementById("datePicker");
+const dateError = document.getElementById("dateError");
 
 let noClickCount = 0;
 let noScale = 1;
@@ -101,9 +102,29 @@ yesButton.addEventListener("click", function () {
 });
 
 confirmButton.addEventListener("click", function () {
+    const selectedDate = datePicker.value;
+
+    // Uses the visitor's local date.
+    const today = new Date();
+    const todayString =
+        today.getFullYear() + "-" +
+        String(today.getMonth() + 1).padStart(2, "0") + "-" +
+        String(today.getDate()).padStart(2, "0");
+
+    if (!selectedDate || selectedDate < todayString) {
+        dateError.classList.remove("hidden");
+        return; // Stop here, so the confirmation page does not appear.
+    }
+
+    dateError.classList.add("hidden");
     datePage.classList.add("hidden");
     confirmPage.classList.remove("hidden");
-})
+    const message = `Our date is on ${selectedDate} ❤️`;
+    const telegramUrl =
+    `https://t.me/share/url?text=${encodeURIComponent(message)}`;
+
+window.open(telegramUrl, "_blank");
+});
 
 function moveNoButton() {
 
