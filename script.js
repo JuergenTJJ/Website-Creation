@@ -172,8 +172,8 @@ Promise.all([
     const ctx = canvas.getContext("2d");
 
     // Opposite corners create a diagonal, spaced-out pattern.
-    ctx.drawImage(faceImage, 35, 35, 110, 110);
-    ctx.drawImage(daisyImage, 250, 250, 95, 125);
+    ctx.drawImage(faceImage, 15, 15, 80, 80);
+    ctx.drawImage(daisyImage, 150, 145, 70, 95);
 
     document.body.style.backgroundImage = `url("${canvas.toDataURL("image/png")}")`;
     document.body.style.backgroundRepeat = "repeat";
