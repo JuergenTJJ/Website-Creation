@@ -9,9 +9,9 @@ h1 {
     font-weight: bold;
     padding-top: 40px;
     margin-bottom: 5px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    -webkit-text-stroke: 1.5px #333;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #333;
+    -webkit-text-stroke: 1.5px white;
 }
 
 .text-box {
