@@ -154,3 +154,29 @@ function moveNoButton() {
     noButton.style.zIndex = "1000";
 
 }
+
+const faceImage = new Image();
+const daisyImage = new Image();
+
+faceImage.src = "images/face.png";
+daisyImage.src = "images/daisy.png";
+
+Promise.all([
+    faceImage.decode(),
+    daisyImage.decode()
+]).then(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 420;
+    canvas.height = 420;
+
+    const ctx = canvas.getContext("2d");
+
+    // Opposite corners create a diagonal, spaced-out pattern.
+    ctx.drawImage(faceImage, 35, 35, 110, 110);
+    ctx.drawImage(daisyImage, 250, 250, 95, 125);
+
+    document.body.style.backgroundImage = `url("${canvas.toDataURL("image/png")}")`;
+    document.body.style.backgroundRepeat = "repeat";
+}).catch(() => {
+    console.error("Could not load face.png or daisy.png. Check the filenames and paths.");
+});

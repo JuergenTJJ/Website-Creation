@@ -2,9 +2,6 @@ body {
     min-height: 100vh;
 
     background-color: #FDFBF7;
-    background-image: url("images/daisy.png"), url("images/face.png");
-    background-repeat: repeat;
-    background-size: 100px;
 }
 
 h1 {
