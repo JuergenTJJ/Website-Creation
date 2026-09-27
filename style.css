@@ -2,7 +2,7 @@ body {
     min-height: 100vh;
 
     background-color: #FDFBF7;
-    background-image: url("");
+    background-image: url("JuergenTJJ/Website-Creation/images/daisy.png");
     background-repeat: repeat;
 }
 
@@ -185,7 +185,7 @@ button:active {
     text-align: center;
     font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 40px;
+    padding-top: 40px;
 }
 
 #confirmPage > h3 {
