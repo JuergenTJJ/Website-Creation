@@ -255,7 +255,8 @@ body.intro-active {
     margin: 25px 0 10px;
     color: #7a5547;
     font-size: 30px;
-    font-family: arial;
+    font-family: Arial;
+    -webkit-text-stroke: 0;
 }
 
 .letter-card p {
