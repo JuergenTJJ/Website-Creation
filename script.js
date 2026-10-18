@@ -103,29 +103,68 @@ yesButton.addEventListener("click", function () {
     datePage.classList.remove("hidden");
 });
 
-confirmButton.addEventListener("click", function () {
+confirmButton.addEventListener("click", async function () {
     const selectedDate = datePicker.value;
 
-    // Uses the visitor's local date.
+    // Get today's date using the visitor's local time.
     const today = new Date();
     const todayString =
         today.getFullYear() + "-" +
         String(today.getMonth() + 1).padStart(2, "0") + "-" +
         String(today.getDate()).padStart(2, "0");
 
+    // Reject an empty date or a past date.
     if (!selectedDate || selectedDate < todayString) {
+        dateError.textContent =
+            "Please select a correct date u dummy ❤️";
         dateError.classList.remove("hidden");
-        return; // Stop here, so the confirmation page does not appear.
+        return;
     }
 
     dateError.classList.add("hidden");
-    datePage.classList.add("hidden");
-    confirmPage.classList.remove("hidden");
-    const message = `Our date is on ${selectedDate} ❤️`;
-    const telegramUrl =
-    `https://t.me/share/url?text=${encodeURIComponent(message)}`;
 
-window.open(telegramUrl, "_blank");
+    // Prevent repeated clicks while sending.
+    confirmButton.disabled = true;
+    confirmButton.textContent = "Sending...";
+
+    try {
+        const formData = new FormData();
+        formData.append("date", selectedDate);
+        formData.append(
+            "message",
+            `Our date is on ${selectedDate} ❤️`
+        );
+
+        // Replace this URL with your Formspree endpoint.
+        const response = await fetch(
+            "https://formspree.io/f/maeqkwda",
+            {
+                method: "POST",
+                body: formData,
+                headers: {
+                    Accept: "application/json"
+                }
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Submission failed");
+        }
+
+        // Show confirmation only after Formspree accepts it.
+        datePage.classList.add("hidden");
+        confirmPage.classList.remove("hidden");
+
+    } catch (error) {
+        dateError.textContent =
+            "Couldn't send your date. Please try again ❤️";
+        dateError.classList.remove("hidden");
+        console.error("Date submission failed:", error);
+
+    } finally {
+        confirmButton.disabled = false;
+        confirmButton.textContent = "Confirm";
+    }
 });
 
 function moveNoButton() {
